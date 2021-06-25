@@ -106,15 +106,29 @@
                                                     <constraint firstAttribute="width" secondItem="Kod-lz-OHP" secondAttribute="height" multiplier="26:27" id="mjo-Mi-hyT"/>
                                                 </constraints>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFZ-qj-sLS">
+                                                <rect key="frame" x="124" y="630" width="166" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="sFZ-qj-sLS" secondAttribute="height" multiplier="83:15" id="g5V-xT-TO3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                                                <state key="normal" title="Forgot your password?">
+                                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="sFZ-qj-sLS" firstAttribute="width" secondItem="BHs-0f-BvX" secondAttribute="height" multiplier="83:26" id="0AI-Ve-qMd"/>
                                             <constraint firstAttribute="trailing" secondItem="Kod-lz-OHP" secondAttribute="trailing" constant="25" id="5pL-oC-XGy"/>
                                             <constraint firstItem="Kod-lz-OHP" firstAttribute="top" secondItem="BFy-nl-oza" secondAttribute="top" constant="244" id="Cy8-sd-3or"/>
                                             <constraint firstItem="Kod-lz-OHP" firstAttribute="width" secondItem="BFy-nl-oza" secondAttribute="height" multiplier="91:500" id="HKi-rO-iTE"/>
+                                            <constraint firstItem="sFZ-qj-sLS" firstAttribute="width" secondItem="BFy-nl-oza" secondAttribute="height" multiplier="83:1000" id="Lpu-sO-wTW"/>
                                             <constraint firstItem="M9m-GH-35T" firstAttribute="top" secondItem="BFy-nl-oza" secondAttribute="top" constant="111" id="Yxh-rg-qfR"/>
                                             <constraint firstItem="M9m-GH-35T" firstAttribute="width" secondItem="BFy-nl-oza" secondAttribute="height" multiplier="123:2000" id="afI-as-OjN"/>
+                                            <constraint firstItem="sFZ-qj-sLS" firstAttribute="leading" secondItem="BFy-nl-oza" secondAttribute="leading" constant="125" id="d6G-oW-fi5"/>
                                             <constraint firstAttribute="trailing" secondItem="M9m-GH-35T" secondAttribute="trailing" constant="24" id="e4d-eN-zv1"/>
+                                            <constraint firstItem="sFZ-qj-sLS" firstAttribute="top" secondItem="Kod-lz-OHP" secondAttribute="bottom" constant="9" id="fEP-xo-NlE"/>
                                             <constraint firstItem="Kod-lz-OHP" firstAttribute="leading" secondItem="BFy-nl-oza" secondAttribute="leading" constant="25" id="rLy-Wj-awB"/>
                                             <constraint firstAttribute="height" constant="2000" id="spx-yu-Ac0"/>
                                         </constraints>
