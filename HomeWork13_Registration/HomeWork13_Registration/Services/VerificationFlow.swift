@@ -32,8 +32,6 @@ class VerificationFlow {
         let nameRegEx = "^[a-zA-Z](?:[a-zA-Z\\s][^\n]*)[a-zA-Z]$"
         let namePred = NSPredicate(format:"SELF MATCHES %@", nameRegEx)
         return namePred.evaluate(with: name)
-        
-        
     }
     
     static func isValidPassword(password: String) -> PasswordStrengthLevel {
@@ -49,7 +47,6 @@ class VerificationFlow {
         return .unreliable
     }
         
-    
     
     
     
