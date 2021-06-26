@@ -18,6 +18,7 @@ class SignUpVC: UIViewController {
     @IBOutlet var passwordStrength: [UIView]!
     @IBOutlet weak var confirmPassTF: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var checkMark: UIImageView!
 
     private var isValidEmail = false
     private var passStrength: PasswordStrengthLevel = .unreliable
@@ -49,6 +50,19 @@ class SignUpVC: UIViewController {
     }
 
     @IBAction func nameChanged(_ sender: UITextField) {
+    }
+
+    @IBAction func confirmPassTFChanged(_ sender: UITextField) {
+
+        if passwordTF.text == confirmPassTF.text {
+            checkMark.isHidden = false
+            checkMark.backgroundColor = .none
+            checkMark.tintColor = .green
+
+        } else {
+            checkMark.isHidden = true
+        }
+
     }
 
     @IBAction func passwordChanged(_ sender: UITextField) {

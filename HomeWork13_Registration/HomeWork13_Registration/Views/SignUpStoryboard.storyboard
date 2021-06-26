@@ -168,11 +168,14 @@
                                                                             </stackView>
                                                                         </subviews>
                                                                     </stackView>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="cSJ-b7-wlt">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="21" background="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cSJ-b7-wlt">
                                                                         <rect key="frame" x="0.0" y="157" width="303" height="34"/>
                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES" textContentType="password"/>
+                                                                        <connections>
+                                                                            <action selector="confirmPassTFChanged:" destination="Y6W-OH-hqX" eventType="editingChanged" id="2ih-Wa-v3c"/>
+                                                                        </connections>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -188,6 +191,10 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
+                                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Gqg-sI-VaE">
+                                                <rect key="frame" x="337" y="831.5" width="34" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -235,6 +242,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="fEo-0b-Pxt"/>
                     <connections>
+                        <outlet property="checkMark" destination="Gqg-sI-VaE" id="fdg-v5-Ihh"/>
                         <outlet property="confirmPassTF" destination="cSJ-b7-wlt" id="9Ch-Iz-g0x"/>
                         <outlet property="emailTF" destination="rYf-3l-AqL" id="lPW-hx-Fjj"/>
                         <outlet property="invalidEmailLabel" destination="QVO-GC-vXg" id="xma-z2-dbb"/>
@@ -282,6 +290,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
