@@ -72,7 +72,7 @@
                                                                             <action selector="passwordTFChanged:" destination="Y6W-OH-hqX" eventType="editingChanged" id="sHe-Ms-0f9"/>
                                                                         </connections>
                                                                     </textField>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password or email is incorrect, try again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFe-Z6-5nT">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User not found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFe-Z6-5nT">
                                                                         <rect key="frame" x="0.0" y="44" width="364" height="17.5"/>
                                                                         <color key="tintColor" systemColor="systemRedColor"/>
                                                                         <constraints>
@@ -154,6 +154,7 @@
                     <navigationItem key="navigationItem" id="Nhi-gr-nRT"/>
                     <connections>
                         <outlet property="emailTF" destination="2O0-7b-U42" id="kG6-ew-LMP"/>
+                        <outlet property="errorLabel" destination="pFe-Z6-5nT" id="yMp-T6-EXI"/>
                         <outlet property="passwordTF" destination="FPi-9B-cFD" id="qxn-HS-Y0f"/>
                         <outlet property="signInButton" destination="BHs-0f-BvX" id="007-1c-xJm"/>
                     </connections>

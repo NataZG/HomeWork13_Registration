@@ -10,7 +10,7 @@ import UIKit
 class SignUpVC: UIViewController {
 
     @IBOutlet weak var emailTF: UITextField!
-    
+
     @IBOutlet weak var invalidEmailLabel: UILabel!
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
@@ -18,10 +18,10 @@ class SignUpVC: UIViewController {
     @IBOutlet var passwordStrength: [UIView]!
     @IBOutlet weak var confirmPassTF: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
-    
+
     private var isValidEmail = false
     private var passStrength: PasswordStrengthLevel = .unreliable
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSignUpButton()
@@ -38,21 +38,21 @@ class SignUpVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
+
     private func setUpSignUpButton() {
-        self.signUpButton.layer.cornerRadius = signUpButton.bounds.height/2
+        self.signUpButton.layer.cornerRadius = signUpButton.bounds.height / 2
     }
-    
+
     @IBAction func emailChanged(_ sender: UITextField) {
-        guard let email = sender.text else {return}
+        guard let email = sender.text else { return }
         invalidEmailLabel.isHidden = VerificationFlow.isValidEmail(email: email)
     }
-    
+
     @IBAction func nameChanged(_ sender: UITextField) {
     }
-    
+
     @IBAction func passwordChanged(_ sender: UITextField) {
-        guard let password = sender.text else {return}
+        guard let password = sender.text else { return }
         passStrength = VerificationFlow.isValidPassword(password: password)
         passwordLevelLabel.isHidden = !(passStrength == .unreliable)
         passwordLevelLabel.text = "Invalid"
@@ -64,9 +64,7 @@ class SignUpVC: UIViewController {
             }
         }
     }
-    
-    @IBAction func passwordConfirmed(_ sender: UITextField) {
-    }
-    @IBAction func signUpButton(_ sender: UIButton) {
-    }
+
+
 }
+
