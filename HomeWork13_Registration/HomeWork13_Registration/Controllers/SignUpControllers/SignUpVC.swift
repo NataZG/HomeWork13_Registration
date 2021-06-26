@@ -18,6 +18,8 @@ class SignUpVC: UIViewController {
     @IBOutlet var passwordStrength: [UIView]!
     @IBOutlet weak var confirmPassTF: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var checkMarkEmail: UIImageView!
+    @IBOutlet weak var checkMarkName: UIImageView!
     @IBOutlet weak var checkMark: UIImageView!
 
     private var isValidEmail = false
@@ -47,9 +49,17 @@ class SignUpVC: UIViewController {
     @IBAction func emailChanged(_ sender: UITextField) {
         guard let email = sender.text else { return }
         invalidEmailLabel.isHidden = VerificationFlow.isValidEmail(email: email)
+        checkMarkEmail.isHidden = !VerificationFlow.isValidEmail(email: email)
+        checkMarkEmail.backgroundColor = .none
+        checkMarkEmail.tintColor = .green
     }
 
     @IBAction func nameChanged(_ sender: UITextField) {
+        guard let name = sender.text else {return}
+        checkMarkName.isHidden = !VerificationFlow.isValidName(name: name)
+        checkMarkName.backgroundColor = .none
+        checkMarkName.tintColor = .green
+        
     }
 
     @IBAction func confirmPassTFChanged(_ sender: UITextField) {
