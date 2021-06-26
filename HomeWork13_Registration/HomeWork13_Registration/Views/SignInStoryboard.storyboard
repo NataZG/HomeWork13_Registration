@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFy-nl-oza">
-                                        <rect key="frame" x="0.0" y="332" width="414" height="2000"/>
+                                        <rect key="frame" x="0.0" y="-87" width="414" height="2000"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9m-GH-35T">
                                                 <rect key="frame" x="267" y="111" width="123" height="32"/>
@@ -41,9 +41,6 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6I-Lf-g3j">
                                                         <rect key="frame" x="0.0" y="0.0" width="364" height="39.5"/>
                                                         <color key="tintColor" systemColor="systemYellowColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="39.5" id="35P-8M-L6a"/>
-                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="34"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -106,8 +103,8 @@
                                                     <constraint firstAttribute="width" secondItem="Kod-lz-OHP" secondAttribute="height" multiplier="26:27" id="mjo-Mi-hyT"/>
                                                 </constraints>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFZ-qj-sLS">
-                                                <rect key="frame" x="124" y="630" width="166" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFZ-qj-sLS">
+                                                <rect key="frame" x="125" y="631" width="166" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="sFZ-qj-sLS" secondAttribute="height" multiplier="83:15" id="g5V-xT-TO3"/>
                                                 </constraints>
@@ -122,21 +119,21 @@
                                             <constraint firstItem="sFZ-qj-sLS" firstAttribute="width" secondItem="BHs-0f-BvX" secondAttribute="height" multiplier="83:26" id="0AI-Ve-qMd"/>
                                             <constraint firstAttribute="trailing" secondItem="Kod-lz-OHP" secondAttribute="trailing" constant="25" id="5pL-oC-XGy"/>
                                             <constraint firstItem="Kod-lz-OHP" firstAttribute="top" secondItem="BFy-nl-oza" secondAttribute="top" constant="244" id="Cy8-sd-3or"/>
-                                            <constraint firstItem="Kod-lz-OHP" firstAttribute="width" secondItem="BFy-nl-oza" secondAttribute="height" multiplier="91:500" id="HKi-rO-iTE"/>
                                             <constraint firstItem="sFZ-qj-sLS" firstAttribute="width" secondItem="BFy-nl-oza" secondAttribute="height" multiplier="83:1000" id="Lpu-sO-wTW"/>
                                             <constraint firstItem="M9m-GH-35T" firstAttribute="top" secondItem="BFy-nl-oza" secondAttribute="top" constant="111" id="Yxh-rg-qfR"/>
                                             <constraint firstItem="M9m-GH-35T" firstAttribute="width" secondItem="BFy-nl-oza" secondAttribute="height" multiplier="123:2000" id="afI-as-OjN"/>
                                             <constraint firstItem="sFZ-qj-sLS" firstAttribute="leading" secondItem="BFy-nl-oza" secondAttribute="leading" constant="125" id="d6G-oW-fi5"/>
                                             <constraint firstAttribute="trailing" secondItem="M9m-GH-35T" secondAttribute="trailing" constant="24" id="e4d-eN-zv1"/>
                                             <constraint firstItem="sFZ-qj-sLS" firstAttribute="top" secondItem="Kod-lz-OHP" secondAttribute="bottom" constant="9" id="fEP-xo-NlE"/>
+                                            <constraint firstItem="m6I-Lf-g3j" firstAttribute="width" secondItem="BFy-nl-oza" secondAttribute="height" multiplier="91:500" id="ndT-ls-D5d"/>
                                             <constraint firstItem="Kod-lz-OHP" firstAttribute="leading" secondItem="BFy-nl-oza" secondAttribute="leading" constant="25" id="rLy-Wj-awB"/>
-                                            <constraint firstAttribute="height" constant="2000" id="spx-yu-Ac0"/>
+                                            <constraint firstItem="Kod-lz-OHP" firstAttribute="width" secondItem="BFy-nl-oza" secondAttribute="height" multiplier="91:500" id="wcV-Oe-6EP"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="BFy-nl-oza" secondAttribute="trailing" id="26k-hu-dVa"/>
-                                    <constraint firstItem="BFy-nl-oza" firstAttribute="top" secondItem="qTz-rj-eCD" secondAttribute="top" constant="332" id="Puh-so-IfD"/>
+                                    <constraint firstItem="BFy-nl-oza" firstAttribute="top" secondItem="Bwa-Gr-ia9" secondAttribute="top" id="IL6-L9-60s"/>
                                     <constraint firstItem="BFy-nl-oza" firstAttribute="leading" secondItem="qTz-rj-eCD" secondAttribute="leading" id="rHk-qR-DoI"/>
                                     <constraint firstAttribute="bottom" secondItem="BFy-nl-oza" secondAttribute="bottom" id="s8U-R8-A8T"/>
                                 </constraints>
