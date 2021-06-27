@@ -55,11 +55,11 @@ class SignUpVC: UIViewController {
     }
 
     @IBAction func nameChanged(_ sender: UITextField) {
-        guard let name = sender.text else {return}
+        guard let name = sender.text else { return }
         checkMarkName.isHidden = !VerificationFlow.isValidName(name: name)
         checkMarkName.backgroundColor = .none
         checkMarkName.tintColor = .green
-        
+
     }
 
     @IBAction func confirmPassTFChanged(_ sender: UITextField) {
