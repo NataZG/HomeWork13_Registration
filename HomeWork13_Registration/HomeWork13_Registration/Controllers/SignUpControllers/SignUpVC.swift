@@ -24,6 +24,7 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var createAccLabel: UILabel!
     
     private var isValidEmail = false
+    private var isPassConfirm = false
     private var passStrength: PasswordStrengthLevel = .unreliable
 
     override func viewDidLoad() {
@@ -64,15 +65,20 @@ class SignUpVC: UIViewController {
     }
 
     @IBAction func confirmPassTFChanged(_ sender: UITextField) {
-
-        if passwordTF.text == confirmPassTF.text {
+        guard let pass1 = passwordTF.text,
+              let pass2 = sender.text else {return}
+        checkMark.isHidden = !VerificationFlow.isPassConfirm(pass1: pass1, pass2: pass2)
+        checkMark.backgroundColor = .none
+        checkMark.tintColor = .green
+        
+    /*: if passwordTF.text == confirmPassTF.text {
             checkMark.isHidden = false
             checkMark.backgroundColor = .none
             checkMark.tintColor = .green
 
         } else {
             checkMark.isHidden = true
-        }
+        }*/
 
     }
 

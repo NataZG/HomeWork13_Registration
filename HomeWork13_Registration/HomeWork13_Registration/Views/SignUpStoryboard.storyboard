@@ -187,9 +187,6 @@
                                                 <state key="normal" title="Sign Up">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="fkH-sl-WEV" kind="show" id="QW1-uB-bQC"/>
-                                                </connections>
                                             </button>
                                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Gqg-sI-VaE">
                                                 <rect key="frame" x="337" y="831.5" width="34" height="32"/>
@@ -282,16 +279,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="734.78260869565224" y="93.75"/>
-        </scene>
-        <!--VerifyCodeStoryboard-->
-        <scene sceneID="WhU-4g-K40">
-            <objects>
-                <viewControllerPlaceholder storyboardName="VerifyCodeStoryboard" id="fkH-sl-WEV" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="OYH-3a-dmK"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ydI-xn-rzy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1272" y="328"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dtj-8c-xLC">
