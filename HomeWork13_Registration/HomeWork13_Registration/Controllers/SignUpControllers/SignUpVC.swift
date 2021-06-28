@@ -19,12 +19,11 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var confirmPassTF: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var checkMarkEmail: UIImageView!
-    @IBOutlet weak var checkMarkName: UIImageView!
     @IBOutlet weak var checkMark: UIImageView!
     @IBOutlet weak var createAccLabel: UILabel!
 
+    // private var isValidName = false
     private var isValidEmail = false
-    private var isValidName = false
     private var isPassConfirm = false
     private var passStrength: PasswordStrengthLevel = .unreliable
 
@@ -46,7 +45,7 @@ class SignUpVC: UIViewController {
     */
 
     private func setUpSignUpButton() {
-        self.signUpButton.layer.cornerRadius = signUpButton.bounds.height / 2
+       self.signUpButton.layer.cornerRadius = signUpButton.bounds.height / 2
     }
 
     @IBAction func emailChanged(_ sender: UITextField) {
@@ -55,15 +54,18 @@ class SignUpVC: UIViewController {
         checkMarkEmail.isHidden = !VerificationFlow.isValidEmail(email: email)
         checkMarkEmail.backgroundColor = .none
         checkMarkEmail.tintColor = .green
+        
+        updateButtonState()
     }
 
-    @IBAction func nameChanged(_ sender: UITextField) {
-        guard let name = sender.text else { return }
+   @IBAction func nameChanged(_ sender: UITextField) {
+   }
+        /*: guard let name = sender.text else { return }
         checkMarkName.isHidden = !VerificationFlow.isValidName(name: name)
         checkMarkName.backgroundColor = .none
         checkMarkName.tintColor = .green
 
-    }
+    }*/
 
     @IBAction func confirmPassTFChanged(_ sender: UITextField) {
         guard let pass1 = passwordTF.text,
@@ -72,6 +74,8 @@ class SignUpVC: UIViewController {
         checkMark.backgroundColor = .none
         checkMark.tintColor = .green
 
+        updateButtonState()
+        
         /*: if passwordTF.text == confirmPassTF.text {
             checkMark.isHidden = false
             checkMark.backgroundColor = .none
@@ -95,8 +99,14 @@ class SignUpVC: UIViewController {
                 view.alpha = 0.1
             }
         }
+        
+        updateButtonState()
     }
 
-
+    private func updateButtonState() {
+        signUpButton.isEnabled = isValidEmail &&
+        isPassConfirm &&
+            (passStrength != .unreliable)
+    }
 }
 
