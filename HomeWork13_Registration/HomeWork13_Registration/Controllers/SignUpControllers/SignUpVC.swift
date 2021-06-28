@@ -21,7 +21,8 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var checkMarkEmail: UIImageView!
     @IBOutlet weak var checkMarkName: UIImageView!
     @IBOutlet weak var checkMark: UIImageView!
-
+    @IBOutlet weak var createAccLabel: UILabel!
+    
     private var isValidEmail = false
     private var passStrength: PasswordStrengthLevel = .unreliable
 

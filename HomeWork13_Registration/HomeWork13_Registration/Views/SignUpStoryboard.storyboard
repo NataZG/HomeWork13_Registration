@@ -28,9 +28,6 @@
                                                 <state key="normal" title="Sign In">
                                                     <color key="titleColor" systemColor="systemYellowColor"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="9us-Ci-kkV" kind="show" id="82e-ou-W4p"/>
-                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMl-lA-Hhg">
                                                 <rect key="frame" x="21" y="152" width="295" height="39.5"/>
@@ -269,6 +266,7 @@
                         <outlet property="checkMarkEmail" destination="ygz-2B-MKJ" id="nUO-Xt-leR"/>
                         <outlet property="checkMarkName" destination="sCw-Z5-ANx" id="6x3-va-Sem"/>
                         <outlet property="confirmPassTF" destination="cSJ-b7-wlt" id="9Ch-Iz-g0x"/>
+                        <outlet property="createAccLabel" destination="HMl-lA-Hhg" id="crp-XH-7ej"/>
                         <outlet property="emailTF" destination="rYf-3l-AqL" id="lPW-hx-Fjj"/>
                         <outlet property="invalidEmailLabel" destination="QVO-GC-vXg" id="xma-z2-dbb"/>
                         <outlet property="nameTF" destination="xES-t8-sGI" id="F4n-S2-SX3"/>
@@ -284,16 +282,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="734.78260869565224" y="93.75"/>
-        </scene>
-        <!--SignInStoryboard-->
-        <scene sceneID="0Js-q4-f9M">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SignInStoryboard" id="9us-Ci-kkV" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="NEO-xC-lRt"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cjx-ni-9rd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1204" y="54"/>
         </scene>
         <!--VerifyCodeStoryboard-->
         <scene sceneID="WhU-4g-K40">
