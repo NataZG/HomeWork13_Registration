@@ -27,26 +27,27 @@ class CodeVerificationVC: UIViewController {
         super.viewDidLoad()
         passCode = passCodeGenerated
         setUpUI()
-
-
     }
 
-
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let email = email,
+            let name = name,
+            let pass = pass,
+            let destVC = segue.destination as? WelcomeVC else { return }
+
+        destVC.email = email
+        destVC.name = name
+        destVC.pass = pass
     }
-    */
+
 
     @IBAction func codeTFChanged(_ sender: UITextField) {
         guard let code = passCode,
             let ourCode = sender.text else { return }
         if isCodeValid(code: code, ourCode: ourCode) {
-            print("go next")
+            performSegue(withIdentifier: "showWelcomeVC", sender: nil)
         }
     }
 
@@ -58,6 +59,5 @@ class CodeVerificationVC: UIViewController {
     private func isCodeValid(code: String, ourCode: String) -> Bool {
         return code == ourCode
     }
-
 
 }

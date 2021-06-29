@@ -255,6 +255,7 @@
                         <outlet property="nameTF" destination="xES-t8-sGI" id="F4n-S2-SX3"/>
                         <outlet property="passwordLevelLabel" destination="nMu-E0-4xV" id="T53-G7-8aN"/>
                         <outlet property="passwordTF" destination="Frl-RH-9aB" id="SYb-DR-Xvq"/>
+                        <outlet property="scrollView" destination="Q83-IR-kkq" id="2UJ-ru-5OW"/>
                         <outlet property="signUpButton" destination="JfD-Cq-bAP" id="6FJ-v9-KKK"/>
                         <outletCollection property="passwordStrength" destination="BkV-yK-0Ra" collectionClass="NSMutableArray" id="ZdB-aa-dQs"/>
                         <outletCollection property="passwordStrength" destination="cHn-PD-TbW" collectionClass="NSMutableArray" id="6tg-sX-ghD"/>
@@ -295,7 +296,7 @@ for registering!</string>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zgb-j7-F8y">
                                         <rect key="frame" x="0.0" y="61" width="352" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" textContentType="password"/>
                                         <connections>
                                             <action selector="codeTFChanged:" destination="KV2-zv-ig4" eventType="editingChanged" id="JKq-IQ-eND"/>
                                         </connections>
@@ -317,22 +318,58 @@ for registering!</string>
                     <connections>
                         <outlet property="codeTF" destination="Zgb-j7-F8y" id="mxU-zG-H7b"/>
                         <outlet property="secretCodeLabel" destination="8e1-Zi-GFs" id="C6M-kQ-KG2"/>
-                        <segue destination="oRu-2f-6ZD" kind="show" id="BXE-Ij-c3z"/>
+                        <segue destination="oRu-2f-6ZD" kind="show" identifier="showWelcomeVC" id="BXE-Ij-c3z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYm-Gz-zpP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2318.840579710145" y="93.75"/>
         </scene>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="Kim-EO-PRn">
             <objects>
-                <viewController id="oRu-2f-6ZD" sceneMemberID="viewController">
+                <viewController id="oRu-2f-6ZD" customClass="WelcomeVC" customModule="HomeWork13_Registration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VyL-RS-oaQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCz-LI-Acc">
+                                <rect key="frame" x="50" y="100" width="314" height="58"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have signed up successfully!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1I-Ma-Kkl">
+                                <rect key="frame" x="25" y="258" width="364" height="58"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1W-kJ-p3c">
+                                <rect key="frame" x="100" y="706" width="214" height="52"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="34"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueButtonTapped" destination="oRu-2f-6ZD" eventType="touchUpInside" id="CNb-lq-Er8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ChA-iO-oT4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ChA-iO-oT4" firstAttribute="trailing" secondItem="d1W-kJ-p3c" secondAttribute="trailing" constant="100" id="6ez-f6-Huf"/>
+                            <constraint firstItem="ChA-iO-oT4" firstAttribute="bottom" secondItem="d1W-kJ-p3c" secondAttribute="bottom" constant="50" id="ICP-7Y-f04"/>
+                            <constraint firstItem="ChA-iO-oT4" firstAttribute="trailing" secondItem="wCz-LI-Acc" secondAttribute="trailing" constant="50" id="YWG-ul-cz6"/>
+                            <constraint firstItem="d1W-kJ-p3c" firstAttribute="leading" secondItem="ChA-iO-oT4" secondAttribute="leading" constant="100" id="gW1-jr-x93"/>
+                            <constraint firstItem="l1I-Ma-Kkl" firstAttribute="leading" secondItem="ChA-iO-oT4" secondAttribute="leading" constant="25" id="h3R-5X-ECJ"/>
+                            <constraint firstItem="wCz-LI-Acc" firstAttribute="leading" secondItem="ChA-iO-oT4" secondAttribute="leading" constant="50" id="pNO-i5-TO0"/>
+                            <constraint firstAttribute="trailing" secondItem="l1I-Ma-Kkl" secondAttribute="trailing" constant="25" id="q0m-xZ-Lpr"/>
+                            <constraint firstItem="wCz-LI-Acc" firstAttribute="top" secondItem="ChA-iO-oT4" secondAttribute="top" constant="100" id="tB1-OD-kF1"/>
+                            <constraint firstItem="d1W-kJ-p3c" firstAttribute="leading" secondItem="ChA-iO-oT4" secondAttribute="leading" constant="100" id="uFc-cR-oga"/>
+                            <constraint firstItem="l1I-Ma-Kkl" firstAttribute="top" secondItem="wCz-LI-Acc" secondAttribute="bottom" constant="100" id="ujK-12-6Ei"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="V3T-Ds-b6B"/>
                 </viewController>

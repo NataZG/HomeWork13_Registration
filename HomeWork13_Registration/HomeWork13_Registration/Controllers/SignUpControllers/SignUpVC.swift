@@ -9,8 +9,8 @@ import UIKit
 
 class SignUpVC: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var emailTF: UITextField!
-
     @IBOutlet weak var invalidEmailLabel: UILabel!
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
@@ -108,11 +108,30 @@ class SignUpVC: UIViewController {
 
     private func setUpSignUpButton() {
         self.signUpButton.layer.cornerRadius = signUpButton.bounds.height / 2
+        
     }
 
     private func updateButtonState() {
         signUpButton.isEnabled = isValidEmail &&
             isPassConfirm && (passStrength != .unreliable)
     }
+    
+    private func startKeyboardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(SignUpVC.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SignUpVC.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow (notification: Notification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)? .cgRectValue else {return}
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    @objc func keyboardWillHide (notification: Notification) {
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+}
 }
 
