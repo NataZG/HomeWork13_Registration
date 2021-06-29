@@ -23,5 +23,5 @@ class WelcomeVC: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
 
-    
+
 }
