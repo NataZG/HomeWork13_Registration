@@ -23,29 +23,27 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var createAccLabel: UILabel!
 
     // private var isValidName = false
-    private var isValidEmail = false
-    private var isPassConfirm = false
+    private var isValidEmail = true
+    private var isPassConfirm = true
     private var passStrength: PasswordStrengthLevel = .unreliable
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSignUpButton()
-
-        // Do any additional setup after loading the view.
+        updateButtonState()
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        guard let email = emailTF.text,
+            let name = nameTF.text,
+            let pass = passwordTF.text,
+            let destVC = segue.destination as? CodeVerificationVC else { return }
 
-    private func setUpSignUpButton() {
-       self.signUpButton.layer.cornerRadius = signUpButton.bounds.height / 2
+        destVC.email = email
+        destVC.name = name
+        destVC.pass = pass
     }
 
     @IBAction func emailChanged(_ sender: UITextField) {
@@ -54,13 +52,13 @@ class SignUpVC: UIViewController {
         checkMarkEmail.isHidden = !VerificationFlow.isValidEmail(email: email)
         checkMarkEmail.backgroundColor = .none
         checkMarkEmail.tintColor = .green
-        
+
         updateButtonState()
     }
 
-   @IBAction func nameChanged(_ sender: UITextField) {
-   }
-        /*: guard let name = sender.text else { return }
+    @IBAction func nameChanged(_ sender: UITextField) {
+    }
+    /*: guard let name = sender.text else { return }
         checkMarkName.isHidden = !VerificationFlow.isValidName(name: name)
         checkMarkName.backgroundColor = .none
         checkMarkName.tintColor = .green
@@ -75,7 +73,7 @@ class SignUpVC: UIViewController {
         checkMark.tintColor = .green
 
         updateButtonState()
-        
+
         /*: if passwordTF.text == confirmPassTF.text {
             checkMark.isHidden = false
             checkMark.backgroundColor = .none
@@ -99,14 +97,22 @@ class SignUpVC: UIViewController {
                 view.alpha = 0.1
             }
         }
-        
+
         updateButtonState()
+    }
+
+
+    @IBAction func signUpButtonTouched(_ sender: UIButton) {
+        performSegue(withIdentifier: "showCodeVC", sender: nil)
+    }
+
+    private func setUpSignUpButton() {
+        self.signUpButton.layer.cornerRadius = signUpButton.bounds.height / 2
     }
 
     private func updateButtonState() {
         signUpButton.isEnabled = isValidEmail &&
-        isPassConfirm &&
-            (passStrength != .unreliable)
+            isPassConfirm && (passStrength != .unreliable)
     }
 }
 
