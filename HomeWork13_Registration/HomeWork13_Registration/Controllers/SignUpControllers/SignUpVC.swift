@@ -9,8 +9,8 @@ import UIKit
 
 class SignUpVC: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var emailTF: UITextField!
-
     @IBOutlet weak var invalidEmailLabel: UILabel!
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
@@ -19,34 +19,31 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var confirmPassTF: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var checkMarkEmail: UIImageView!
-    @IBOutlet weak var checkMarkName: UIImageView!
     @IBOutlet weak var checkMark: UIImageView!
     @IBOutlet weak var createAccLabel: UILabel!
 
-    private var isValidEmail = false
-    private var isValidName = false
-    private var isPassConfirm = false
+    // private var isValidName = false
+    private var isValidEmail = true
+    private var isPassConfirm = true
     private var passStrength: PasswordStrengthLevel = .unreliable
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSignUpButton()
-
-        // Do any additional setup after loading the view.
+        updateButtonState()
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        guard let email = emailTF.text,
+            let name = nameTF.text,
+            let pass = passwordTF.text,
+            let destVC = segue.destination as? CodeVerificationVC else { return }
 
-    private func setUpSignUpButton() {
-        self.signUpButton.layer.cornerRadius = signUpButton.bounds.height / 2
+        destVC.email = email
+        destVC.name = name
+        destVC.pass = pass
     }
 
     @IBAction func emailChanged(_ sender: UITextField) {
@@ -55,15 +52,18 @@ class SignUpVC: UIViewController {
         checkMarkEmail.isHidden = !VerificationFlow.isValidEmail(email: email)
         checkMarkEmail.backgroundColor = .none
         checkMarkEmail.tintColor = .green
+
+        updateButtonState()
     }
 
     @IBAction func nameChanged(_ sender: UITextField) {
-        guard let name = sender.text else { return }
+    }
+    /*: guard let name = sender.text else { return }
         checkMarkName.isHidden = !VerificationFlow.isValidName(name: name)
         checkMarkName.backgroundColor = .none
         checkMarkName.tintColor = .green
 
-    }
+    }*/
 
     @IBAction func confirmPassTFChanged(_ sender: UITextField) {
         guard let pass1 = passwordTF.text,
@@ -72,6 +72,9 @@ class SignUpVC: UIViewController {
         checkMark.backgroundColor = .none
         checkMark.tintColor = .green
 
+        updateButtonState()
+
+// другой вариант
         /*: if passwordTF.text == confirmPassTF.text {
             checkMark.isHidden = false
             checkMark.backgroundColor = .none
@@ -95,8 +98,41 @@ class SignUpVC: UIViewController {
                 view.alpha = 0.1
             }
         }
+
+        updateButtonState()
     }
 
 
+    @IBAction func signUpButtonTouched(_ sender: UIButton) {
+        performSegue(withIdentifier: "showCodeVC", sender: nil)
+    }
+
+    private func setUpSignUpButton() {
+        self.signUpButton.layer.cornerRadius = signUpButton.bounds.height / 2
+
+    }
+
+    private func updateButtonState() {
+        signUpButton.isEnabled = isValidEmail &&
+            isPassConfirm && (passStrength != .unreliable)
+    }
+
+    private func startKeyboardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(SignUpVC.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SignUpVC.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    @objc func keyboardWillShow (notification: Notification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)? .cgRectValue else { return }
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+
+    @objc func keyboardWillHide (notification: Notification) {
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
 }
 

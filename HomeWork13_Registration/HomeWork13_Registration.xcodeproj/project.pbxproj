@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4180291B268687290041E98C /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4180291A268687290041E98C /* SignUpVC.swift */; };
 		4180291E26868DCB0041E98C /* VerificationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4180291D26868DCB0041E98C /* VerificationFlow.swift */; };
+		41802926268AE11C0041E98C /* CodeVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41802925268AE11B0041E98C /* CodeVerificationVC.swift */; };
+		4180292A268AFA900041E98C /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41802929268AFA900041E98C /* WelcomeVC.swift */; };
+		4180292C268AFD0C0041E98C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4180292B268AFD0C0041E98C /* Constants.swift */; };
 		41D429252686521200C4CFB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D429242686521200C4CFB0 /* AppDelegate.swift */; };
 		41D429272686521200C4CFB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D429262686521200C4CFB0 /* SceneDelegate.swift */; };
 		41D4292E2686521800C4CFB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41D4292D2686521800C4CFB0 /* Assets.xcassets */; };
@@ -21,6 +24,9 @@
 /* Begin PBXFileReference section */
 		4180291A268687290041E98C /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		4180291D26868DCB0041E98C /* VerificationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationFlow.swift; sourceTree = "<group>"; };
+		41802925268AE11B0041E98C /* CodeVerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerificationVC.swift; sourceTree = "<group>"; };
+		41802929268AFA900041E98C /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		4180292B268AFD0C0041E98C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		41D429212686521200C4CFB0 /* HomeWork13_Registration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork13_Registration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D429242686521200C4CFB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41D429262686521200C4CFB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				41D4292D2686521800C4CFB0 /* Assets.xcassets */,
+				4180292B268AFD0C0041E98C /* Constants.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -128,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				4180291A268687290041E98C /* SignUpVC.swift */,
+				41802925268AE11B0041E98C /* CodeVerificationVC.swift */,
+				41802929268AFA900041E98C /* WelcomeVC.swift */,
 			);
 			path = SignUpControllers;
 			sourceTree = "<group>";
@@ -203,11 +212,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41802926268AE11C0041E98C /* CodeVerificationVC.swift in Sources */,
 				4180291B268687290041E98C /* SignUpVC.swift in Sources */,
 				4180291E26868DCB0041E98C /* VerificationFlow.swift in Sources */,
 				41D429252686521200C4CFB0 /* AppDelegate.swift in Sources */,
 				41D429272686521200C4CFB0 /* SceneDelegate.swift in Sources */,
+				4180292A268AFA900041E98C /* WelcomeVC.swift in Sources */,
 				41D4294426866D0B00C4CFB0 /* SignInVC.swift in Sources */,
+				4180292C268AFD0C0041E98C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

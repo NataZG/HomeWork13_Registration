@@ -28,11 +28,11 @@ class VerificationFlow {
         return emailPred.evaluate(with: email)
     }
 
-    static func isValidName(name: String) -> Bool {
+    /*: static func isValidName(name: String) -> Bool {
         let nameRegEx = "^[a-zA-Z](?:[a-zA-Z\\s][^\n]*)[a-zA-Z]$"
         let namePred = NSPredicate(format: "SELF MATCHES %@", nameRegEx)
         return namePred.evaluate(with: name)
-    }
+    } */
 
     static func isValidPassword(password: String) -> PasswordStrengthLevel {
         if NSPredicate(format: "SELF MATCHES %@", weakRegex).evaluate(with: password) {
@@ -47,9 +47,9 @@ class VerificationFlow {
             return .unreliable
         }
     }
-    
+
     static func isPassConfirm(pass1: String, pass2: String) -> Bool {
-            return pass1 == pass2
+        return pass1 == pass2
     }
 
 
